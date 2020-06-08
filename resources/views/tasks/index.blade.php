@@ -12,20 +12,28 @@
                     <th>タスク</th>
                 </tr>
             </thead>
-            <tbody>
-                @foreach ($tasks as $tasks)
+             <tbody>
+                @foreach ($tasks as $task)
                 <tr>
-                    <!--<td>{{ $tasks->id }}</td>-->
-                    <!--<td>{{ $tasks->content }}</td>-->
-                    <td>{!! link_to_route('tasks.show', $tasks->id, ['task' => $tasks->id]) !!}</td>
-                    <td>{{ $tasks->content }}</td>
+                    <td>{!! link_to_route('tasks.show', $task->id, ['task' => $task->id]) !!}</td>
+                    <td>{{ $task->title }}</td>
+                    <td>{{ $task->content }}</td>
                 </tr>
                 @endforeach
             </tbody>
+            <!--<tbody>-->
+            <!--    @foreach ($tasks as $tasks)-->
+            <!--    <tr>-->
+                    <!--<td>{{ $tasks->id }}</td>-->
+                    <!--<td>{{ $tasks->content }}</td>-->
+            <!--        <td>{!! link_to_route('tasks.show', $tasks->id, ['task' => $tasks->id]) !!}</td>-->
+            <!--        <td>{{ $tasks->content }}</td>-->
+            <!--    </tr>-->
+            <!--    @endforeach-->
+            <!--</tbody>-->
         </table>
     @endif
     
     {!! link_to_route('tasks.create', '新規タスク', [], ['class' => 'btn btn-primary']) !!}
-
 
 @endsection

@@ -3,6 +3,7 @@
 @section('content')
 
     <h1>編集ページ</h1>
+    
 
     <div class="row">
         <div class="col-6">
